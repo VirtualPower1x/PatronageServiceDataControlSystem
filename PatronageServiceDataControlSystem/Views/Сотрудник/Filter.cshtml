@@ -1,0 +1,124 @@
+﻿@model IEnumerable<PatronageServiceDataControlSystem.Сотрудник>
+
+@{
+    ViewBag.Title = "Фильтрация данных для отображения";
+}
+
+<h2>Фильтр отображения данных</h2>
+<p>
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>
+
+<form method="get">
+    <div class="form-inline form-group">
+        <label class="control-label">Пол: </label>
+        @Html.DropDownList("Gender", null, htmlAttributes: new { @class = "form-control" })
+        <br /> <br />
+        <label class="control-label">Дата рождения, начиная с: </label>
+        @Html.TextBox("DateOfBirthMin", null, htmlAttributes: new { @class = "form-control" })
+        <br /> <br />
+        <label class="control-label">Дата приема на работу, начиная с: </label>
+        @Html.TextBox("EmployDateMin", null, htmlAttributes: new { @class = "form-control" })
+        <br /> <br />
+        <label class="control-label">Должность: </label>
+        @Html.DropDownList("Position", null, htmlAttributes: new { @class = "form-control" })
+        <br /> <br />
+        <label class="control-label">Стаж работы, начиная с: </label>
+        @Html.TextBox("Experience", null, htmlAttributes: new { @class = "form-control" })
+        <br /> <br />
+        <input type="submit" value="Фильтрация" class="btn btn-default" />
+    </div>
+</form>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Фамилия_сотрудника)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Имя_сотрудника)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Пол)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_рождения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Домашний_адрес_сотрудника)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Телефон_сотрудника)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_приема_на_работу)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Должность)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Образование)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Стаж_работы)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Заработная_плата)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Специализация)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Фамилия_сотрудника)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Имя_сотрудника)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Пол)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_рождения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Домашний_адрес_сотрудника)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Телефон_сотрудника)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_приема_на_работу)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Должность)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Образование)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Стаж_работы)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Заработная_плата)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Специализация)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.ID_сотрудника }) |
+                @Html.ActionLink("Подробно", "Details", new { id = item.ID_сотрудника }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ID_сотрудника })
+            </td>
+        </tr>
+    }
+
+</table>
+

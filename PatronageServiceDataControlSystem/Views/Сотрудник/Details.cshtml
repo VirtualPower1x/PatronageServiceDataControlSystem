@@ -1,0 +1,114 @@
+﻿@model PatronageServiceDataControlSystem.Сотрудник
+
+@{
+    ViewBag.Title = "Подробно";
+}
+
+<h2>Подробно</h2>
+
+<div>
+    <h4>Сотрудник</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Фамилия_сотрудника)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Фамилия_сотрудника)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Имя_сотрудника)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Имя_сотрудника)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Пол)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Пол)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_рождения)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_рождения)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Домашний_адрес_сотрудника)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Домашний_адрес_сотрудника)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Телефон_сотрудника)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Телефон_сотрудника)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_приема_на_работу)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_приема_на_работу)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Должность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Должность)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Образование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Образование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Стаж_работы)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Стаж_работы)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Заработная_плата)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Заработная_плата)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Специализация)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Специализация)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.ID_сотрудника }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

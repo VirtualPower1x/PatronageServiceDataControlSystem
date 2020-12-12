@@ -1,0 +1,56 @@
+﻿@model PatronageServiceDataControlSystem.Услуга
+
+@{
+    ViewBag.Title = "Удаление услуги";
+}
+
+<h2>Удаление услуги</h2>
+
+<h3>Вы действительно хотите удалить запись?</h3>
+<div>
+    <h4>Услуга</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Название_услуги)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Название_услуги)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Описание_услуги)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Описание_услуги)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Цена_услуги)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Цена_услуги)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Максимальная_скидка)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Максимальная_скидка)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться к списку", "Index")
+        </div>
+    }
+</div>

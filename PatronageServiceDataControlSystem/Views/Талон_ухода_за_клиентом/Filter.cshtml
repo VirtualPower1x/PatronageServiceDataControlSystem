@@ -1,0 +1,97 @@
+﻿@model IEnumerable<PatronageServiceDataControlSystem.Талон_ухода_за_клиентом>
+
+@{
+    ViewBag.Title = "Фильтрация данных для отображения";
+}
+
+<h2>Фильтр отображения данных</h2>
+<p>
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>
+
+<form method="get">
+    <div class="form-inline form-group">        
+        <label class="control-label">Период оказания услуг с: </label>
+        @Html.TextBox("ServiceDateMin", null, htmlAttributes: new { @class = "form-control" })
+        <label class="control-label">до: </label>
+        @Html.TextBox("ServiceDateMax", null, htmlAttributes: new { @class = "form-control" })
+        <br /> <br />
+        <label class="control-label">Услуга: </label>
+        @Html.DropDownList("ServicesID", null, htmlAttributes: new { @class = "form-control" })
+        <br /> <br />
+        <input type="submit" value="Фильтрация" class="btn btn-default" />
+    </div>
+</form>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Клиент.Фамилия_клиента)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Сотрудник.Фамилия_сотрудника)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Услуга.Название_услуги)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_начала_обслуживания)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_окончания_обслуживания)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Схема_мероприятий)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Медицинские_показания)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Сумма_к_оплате)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Скидка)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Клиент.Фамилия_клиента)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Сотрудник.Фамилия_сотрудника)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Услуга.Название_услуги)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Дата_начала_обслуживания)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Дата_окончания_обслуживания)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Схема_мероприятий)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Медицинские_показания)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Сумма_к_оплате)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Скидка)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.ID_талона }) |
+            @Html.ActionLink("Подробно", "Details", new { id=item.ID_талона }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.ID_талона })
+        </td>
+    </tr>
+}
+
+</table>

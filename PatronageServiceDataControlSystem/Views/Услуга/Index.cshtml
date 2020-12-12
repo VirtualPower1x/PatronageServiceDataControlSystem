@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PatronageServiceDataControlSystem.Услуга>
+
+@{
+    ViewBag.Title = "Услуги";
+}
+
+<h2>Справочник услуг</h2>
+
+<p>
+    @Html.ActionLink("Новая услуга", "Create")
+    <text>|</text>
+    @Html.ActionLink("Фильтрация", "Filter")
+    <text>|</text>
+    @Html.ActionLink("Поиск", "Search")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Название_услуги)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Описание_услуги)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Цена_услуги)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Максимальная_скидка)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Название_услуги)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Описание_услуги)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Цена_услуги)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Максимальная_скидка)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.ID_услуги }) |
+            @Html.ActionLink("Подробно", "Details", new { id=item.ID_услуги }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.ID_услуги })
+        </td>
+    </tr>
+}
+
+</table>

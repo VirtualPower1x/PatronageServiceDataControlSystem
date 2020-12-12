@@ -1,0 +1,90 @@
+﻿@model PatronageServiceDataControlSystem.Клиент
+
+@{
+    ViewBag.Title = "Подробно";
+}
+
+<h2>Подробно</h2>
+
+<div>
+    <h4>Клиент</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Фамилия_клиента)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Фамилия_клиента)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Имя_клиента)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Имя_клиента)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Пол_клиента)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Пол_клиента)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_рождения_клиента)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_рождения_клиента)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Адрес_клиента)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Адрес_клиента)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Телефон_клиента)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Телефон_клиента)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Заболевание)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Заболевание)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Категория_инвалидности)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Категория_инвалидности)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Постоянный_уход)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Постоянный_уход)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.ID_клиента }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

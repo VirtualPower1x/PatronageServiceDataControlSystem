@@ -1,0 +1,99 @@
+﻿@model IEnumerable<PatronageServiceDataControlSystem.Клиент>
+
+@{
+    ViewBag.Title = "Фильтрация данных для отображения";
+}
+
+<h2>Фильтр отображения данных</h2>
+<p>
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>
+
+<form method="get">
+    <div class="form-inline form-group">
+        <label class="control-label">Оказываемая услуга: </label>
+        @Html.DropDownList("ServicesID", null, htmlAttributes: new { @class = "form-control" })
+        <br /> <br />
+        <label class="control-label">Пол: </label>
+        @Html.DropDownList("Gender", null, htmlAttributes: new { @class = "form-control" })
+        <br /> <br />
+        <label class="control-label">Дата рождения, начиная с: </label>
+        @Html.TextBox("ServiceDateMin", null, htmlAttributes: new { @class = "form-control" })
+        <br /> <br />
+        <input type="submit" value="Фильтрация" class="btn btn-default" />
+    </div>
+</form>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Фамилия_клиента)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Имя_клиента)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Пол_клиента)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_рождения_клиента)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Адрес_клиента)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Телефон_клиента)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Заболевание)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Категория_инвалидности)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Постоянный_уход)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Фамилия_клиента)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Имя_клиента)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Пол_клиента)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_рождения_клиента)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Адрес_клиента)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Телефон_клиента)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Заболевание)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Категория_инвалидности)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Постоянный_уход)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.ID_клиента }) |
+                @Html.ActionLink("Подробно", "Details", new { id = item.ID_клиента }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ID_клиента })
+            </td>
+        </tr>
+    }
+
+</table>
